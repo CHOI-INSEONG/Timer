@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class TimerDisplay extends StatelessWidget {
@@ -16,12 +18,25 @@ class TimerDisplay extends StatelessWidget {
                 color: Colors.black, fontSize: 40, fontWeight: FontWeight.w400),
           ),
         ),
-        body: Column(
+        body:  Column(
           children: [
             Flexible(
               flex: 7,
-              child: Container(
-                color: Colors.blue,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Time",
+                    style: TextStyle(fontSize: 50, fontWeight: FontWeight.w700),
+                  ),
+                  IconButton(
+                    iconSize: 50,
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.play_circle_outline,
+                    ),
+                  ),
+                ],
               ),
             ),
             const Flexible(
@@ -41,23 +56,26 @@ class TimerDisplay extends StatelessWidget {
                   Flexible(
                     flex: 3,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Flexible(
-                          flex: 1,
-                            child: Text(
-                              "Hello",
-                              style: TextStyle(
-                                fontSize:30,
-                              ),
-                              textAlign: TextAlign.center,
+                        Center(
+                          child: Text(
+                            "현재 사이클",
+                            style: TextStyle(
+                              fontSize: 40,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
-                        Flexible(
-                          flex: 1,
+                        Center(
                           child: Text(
-                            "bye",
-                            textAlign: TextAlign.center, 
-
+                            "goal",
+                            style: TextStyle(
+                              fontSize: 40,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ],
